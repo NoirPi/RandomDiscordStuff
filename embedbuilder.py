@@ -44,10 +44,9 @@ def populate(embed: discord.Embed, sections: list):
         sections (list):
     """
     for section in sections:
-        name = section.get("name", "")
-        value = section.get("value", "")
+        name = section.get("name", "\uFEFF")
+        value = section.get("value", "\uFEFF")
         inline = section.get("inline", True)
-        # if len(name) == 0 or len(value) == 0:
         if not name or not value:
             continue
 embed.add_field(name=name, value=value, inline=inline)
